@@ -21,8 +21,6 @@ const app = express();
 
 app.get("/ping", async (req, res) => {
   const database = await sequelize.query("SELECT 1 + 1").then(() => "up").catch(() => "down");
-  console.log("OiOi")
-
   res.send({
     environment: process.env.NODE_ENV,
     database,
